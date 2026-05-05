@@ -1,7 +1,11 @@
-export default function Greeting({ name }: { name: string }) {
+import type { Signal } from "@preact/signals-react";
+
+export default function Greeting({ name }: { name: Signal<string> }) {
   console.log("Greeting render", Date.now());
 
   return (
-    <p>Hello, {name ? <strong>{name}!</strong> : <em>name not set...</em>}</p>
+    <p>
+      Hello, {name.value ? <strong>{name}!</strong> : <em>name not set...</em>}
+    </p>
   );
 }
