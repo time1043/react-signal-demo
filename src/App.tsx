@@ -1,10 +1,6 @@
 import { useState } from "react";
 import Greeting from "./components/Greeting";
 
-// When using useState to update state,
-// the component and its entire subtree are re-rendered by default,
-// even if the child component does not directly depend on the state.
-
 export default function App() {
   console.log("App render", Date.now());
 
@@ -13,7 +9,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>With useState</h1>
+      <h1>With React Compiler</h1>
       <label>
         Enter your name:
         <input
