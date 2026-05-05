@@ -14,6 +14,9 @@ importers:
       react-dom:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
+      use-signals:
+        specifier: ^0.1.1
+        version: 0.1.1(react@19.2.5)
     devDependencies:
       '@types/node':
         specifier: ^24.12.2
@@ -176,6 +179,11 @@ packages:
       babel-plugin-react-compiler:
         optional: true
 
+  create-react-signals@0.8.0:
+    resolution: {integrity: sha512-BMenSpH81lr/eRQp5ABPIfmBL1wqcIfM3iPnbPROtHn79KwtR9KVnQnFN/skTN/YLJPXJmXDM/R1CGhAWnEg1w==}
+    peerDependencies:
+      react: '>=18.0.0'
+
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
@@ -300,6 +308,9 @@ packages:
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
+  signal-polyfill@0.1.2:
+    resolution: {integrity: sha512-HT9d+L9NMiTzMxb/tU2Baym6129ROyRETSjvchvSkQa7wN0+SrG/IUlsaBLqKn2c+4mlze6CgQBEvgBjxOpiaQ==}
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -318,6 +329,11 @@ packages:
 
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
+  use-signals@0.1.1:
+    resolution: {integrity: sha512-TBoaBFGhUnydrwZ9TYlZmAEKyoPB8fN5ykjvdpe6lWjjGz3y11uSq1WdT1naetjgEsE2s4dL7vCB1JHYnK6EFg==}
+    peerDependencies:
+      react: '>=18.0.0'
 
   vite@8.0.10:
     resolution: {integrity: sha512-rZuUu9j6J5uotLDs+cAA4O5H4K1SfPliUlQwqa6YEwSrWDZzP4rhm00oJR5snMewjxF5V/K3D4kctsUTsIU9Mw==}
@@ -464,6 +480,10 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-rc.7
       vite: 8.0.10(@types/node@24.12.2)
 
+  create-react-signals@0.8.0(react@19.2.5):
+    dependencies:
+      react: 19.2.5
+
   csstype@3.2.3: {}
 
   detect-libc@2.1.2: {}
@@ -566,6 +586,8 @@ snapshots:
 
   scheduler@0.27.0: {}
 
+  signal-polyfill@0.1.2: {}
+
   source-map-js@1.2.1: {}
 
   tinyglobby@0.2.16:
@@ -579,6 +601,12 @@ snapshots:
   typescript@6.0.3: {}
 
   undici-types@7.16.0: {}
+
+  use-signals@0.1.1(react@19.2.5):
+    dependencies:
+      create-react-signals: 0.8.0(react@19.2.5)
+      react: 19.2.5
+      signal-polyfill: 0.1.2
 
   vite@8.0.10(@types/node@24.12.2):
     dependencies:

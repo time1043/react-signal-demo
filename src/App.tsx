@@ -1,28 +1,32 @@
-import { useState } from "react";
+import { $, Signal } from "use-signals";
 import Greeting from "./components/Greeting";
 
-// When using useState to update state,
-// the component and its entire subtree are re-rendered by default,
-// even if the child component does not directly depend on the state.
+// https://github.com/tc39/proposal-signals/blob/main/README.md#example---a-signals-counter
+// https://github.com/proposal-signals/signal-polyfill
+// https://github.com/dai-shi/use-signals
+
+const signals = {
+  name: new Signal.State("name not set"),
+  inputValue: new Signal.State(""),
+};
 
 export default function App() {
   console.log("App render", Date.now());
 
-  const [inputValue, setInputValue] = useState("");
-  const [name, setName] = useState("");
-
   return (
     <div>
-      <h1>With useState</h1>
+      <h1>With use-signals</h1>
       <label>
         Enter your name:
         <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          value={$(signals.inputValue)}
+          onChange={(e) => signals.inputValue.set(e.target.value)}
         />
-        <button onClick={() => setName(inputValue)}>Set Name</button>
+        <button onClick={() => signals.name.set(signals.inputValue.get())}>
+          Set Name
+        </button>
       </label>
-      <Greeting name={name} />
+      <Greeting name={signals.name} />
     </div>
   );
 }
