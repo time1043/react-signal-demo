@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Greeting from "./components/Greeting";
+import Input from "./components/Input";
 
 // When using useState to update state,
 // the component and its entire subtree are re-rendered by default,
@@ -16,10 +17,7 @@ export default function App() {
       <h1>With useState</h1>
       <label>
         Enter your name:
-        <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
+        <Input {...{ inputValue, setInputValue }} />
         <button onClick={() => setName(inputValue)}>Set Name</button>
       </label>
       <Greeting name={name} />
